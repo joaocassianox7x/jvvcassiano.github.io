@@ -1,7 +1,7 @@
 # Base dependencies
 # pip install -r requirements.txt
 
-sphinx==1.8.5  # pyup: <2.0.0
+sphinx==3.0.3
 sphinx_rtd_theme==0.4.3
 sphinx-tabs==1.1.13
 readthedocs-sphinx-search==0.1.0rc3
