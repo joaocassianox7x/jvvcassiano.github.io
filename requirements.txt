@@ -5,4 +5,4 @@ sphinx==3.0.3
 sphinx_rtd_theme==0.4.3
 sphinx-tabs==1.1.13
 readthedocs-sphinx-search==0.1.0rc3
-jinja2>=3.0.0
+jinja2==3.0.0
