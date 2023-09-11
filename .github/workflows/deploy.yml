@@ -1,4 +1,5 @@
 name: Build and Deploy
+
 on:
   push:
     branches:
@@ -24,10 +25,14 @@ jobs:
 
     - name: Build documentation
       run: |
+        cd docs
         make html
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Deploy to FTP Server
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/_build
+        server: ftp.yourserver.com
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: path/to/your/server/directory
+        local-dir: docs/_build/html
