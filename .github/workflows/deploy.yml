@@ -28,11 +28,10 @@ jobs:
         cd docs
         make html
 
-    - name: Deploy to FTP Server
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
-        server: ftp.yourserver.com
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: path/to/your/server/directory
-        local-dir: docs/_build/html
+        branch: gh-pages  # The branch the action should deploy to.
+        folder: docs/_build  # The folder the action should deploy.
+        clean: true  # Automatically remove old files from the deployment branch
+        token: ${{ secrets.GITHUB_TOKEN }}  # A token for the action to use for deployment.
